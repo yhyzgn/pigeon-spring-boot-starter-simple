@@ -1,22 +1,23 @@
 package com.yhy.simple.pigeon.starter;
 
-import com.yhy.http.pigeon.starter.EnablePigeon;
-import com.yhy.http.pigeon.starter.annotation.Header;
-import com.yhy.http.pigeon.starter.annotation.Interceptor;
+import com.yhy.http.pigeon.starter.EnablePigeonClient;
+import com.yhy.http.pigeon.starter.annotation.HeaderClient;
+import com.yhy.http.pigeon.starter.annotation.InterceptorClient;
 import com.yhy.simple.pigeon.starter.remote.interceptor.GlobalInterceptor;
 import com.yhy.simple.pigeon.starter.remote.interceptor.GlobalNetInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnablePigeon(
+@EnablePigeonClient(
         baseURL = "${pigeon.host}",
+        basePackages = "com.yhy.simple.pigeon.starter",
         header = {
-                @Header(name = "Token", value = "sdfSDFfdSD")
+                @HeaderClient(name = "Token", value = "sdfSDFfdSD")
         },
         interceptor = {
-                @Interceptor(value = GlobalInterceptor.class),
-                @Interceptor(value = GlobalNetInterceptor.class, net = true)
+                @InterceptorClient(value = GlobalInterceptor.class),
+                @InterceptorClient(value = GlobalNetInterceptor.class, net = true)
         }
 )
 public class Application {
