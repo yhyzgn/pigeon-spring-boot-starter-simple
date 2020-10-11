@@ -3,8 +3,8 @@ package com.yhy.simple.pigeon.starter.remote.interceptor;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Interceptor;
 import okhttp3.Response;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import java.io.IOException;
 
 /**
@@ -18,7 +18,8 @@ import java.io.IOException;
 public class LocalInterceptor implements Interceptor {
 
     @Override
-    public @NotNull Response intercept(@NotNull Chain chain) throws IOException {
+    @Nonnull
+    public Response intercept(Chain chain) throws IOException {
         log.info("Local拦截器执行了！");
         return chain.proceed(chain.request());
     }

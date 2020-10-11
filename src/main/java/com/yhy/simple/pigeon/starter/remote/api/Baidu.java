@@ -1,9 +1,9 @@
 package com.yhy.simple.pigeon.starter.remote.api;
 
 import com.yhy.http.pigeon.annotation.method.GET;
-import com.yhy.http.pigeon.starter.annotation.HeaderClient;
-import com.yhy.http.pigeon.starter.annotation.InterceptorClient;
-import com.yhy.http.pigeon.starter.annotation.PigeonClient;
+import com.yhy.http.pigeon.starter.annotation.Pigeon;
+import com.yhy.http.pigeon.starter.annotation.PigeonHeader;
+import com.yhy.http.pigeon.starter.annotation.PigeonInterceptor;
 import com.yhy.simple.pigeon.starter.remote.interceptor.BaiduInterceptor;
 
 /**
@@ -13,14 +13,14 @@ import com.yhy.simple.pigeon.starter.remote.interceptor.BaiduInterceptor;
  * version: 1.0.0
  * desc   :
  */
-@PigeonClient(
+@Pigeon(
         name = "baidu",
         baseURL = "https://www.baidu.com",
         header = {
-                @HeaderClient(name = "Local-Header", value = "Local API")
+                @PigeonHeader(name = "Local-Header", value = "Local API")
         },
         interceptor = {
-                @InterceptorClient(value = BaiduInterceptor.class, net = true)
+                @PigeonInterceptor(value = BaiduInterceptor.class, net = true)
         })
 public interface Baidu {
 

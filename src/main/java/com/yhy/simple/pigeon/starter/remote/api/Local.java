@@ -1,9 +1,9 @@
 package com.yhy.simple.pigeon.starter.remote.api;
 
 import com.yhy.http.pigeon.annotation.method.GET;
-import com.yhy.http.pigeon.starter.annotation.HeaderClient;
-import com.yhy.http.pigeon.starter.annotation.InterceptorClient;
-import com.yhy.http.pigeon.starter.annotation.PigeonClient;
+import com.yhy.http.pigeon.starter.annotation.Pigeon;
+import com.yhy.http.pigeon.starter.annotation.PigeonHeader;
+import com.yhy.http.pigeon.starter.annotation.PigeonInterceptor;
 import com.yhy.simple.pigeon.starter.remote.interceptor.LocalInterceptor;
 
 /**
@@ -13,13 +13,13 @@ import com.yhy.simple.pigeon.starter.remote.interceptor.LocalInterceptor;
  * version: 1.0.0
  * desc   :
  */
-@PigeonClient(
+@Pigeon(
         name = "local",
         header = {
-                @HeaderClient(name = "Local-Header", value = "Local API")
+                @PigeonHeader(name = "Local-Header", value = "Local API")
         },
         interceptor = {
-                @InterceptorClient(value = LocalInterceptor.class)
+                @PigeonInterceptor(value = LocalInterceptor.class)
         }
 )
 public interface Local {
