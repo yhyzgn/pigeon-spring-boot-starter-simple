@@ -14,6 +14,7 @@ import com.yhy.simple.pigeon.starter.remote.interceptor.LocalInterceptor;
  * desc   :
  */
 @Pigeon(
+        baseURL = "${pigeon.host}",
         name = "local",
         header = {
                 @PigeonHeader(name = "Local-Header", value = "Local API")
