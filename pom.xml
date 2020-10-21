@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yhyzgn.simple</groupId>
-    <artifactId>pigeon-spring-boot-starter</artifactId>
+    <artifactId>pigeon-spring-boot-starter-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pigeon-spring-boot-starter</name>
+    <name>pigeon-spring-boot-starter-simple</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
